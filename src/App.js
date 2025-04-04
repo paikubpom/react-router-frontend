@@ -8,6 +8,7 @@ import {
   useParams,
   useNavigate,
 } from "react-router-dom";
+import Dashboard from "./components/Dashboard";
 
 function Home() {
   return <h2 className="text-center text-4xl font-bold mt-10">Home Page</h2>;
@@ -62,6 +63,7 @@ function App() {
     <Router>
       <nav>
         <Link to="/">Home</Link> |
+        <Link to="/dashboard">Dashboard</Link> |
         <Link to="/about">About</Link> |
         <Link to="/contact">Contact</Link> |
         <Link to="/user">User</Link> |
@@ -75,6 +77,7 @@ function App() {
         <Route path="/user/:username" element={<UserProfile />} />
         <Route path="/user" element={<h2 className="text-center text-4xl font-bold mt-10">User Page</h2>}/>
         <Route path="/login" element={<Login />} />
+        <Route path="/dashboard/*" element={<Dashboard />} />
 
         <Route path="/*" element={<NotFound />} />
       </Routes>
